@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <ScrollView
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:background="@drawable/backgroun"
+      tools:context=".productsRegister"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/productsRegister"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="50dp"
+          android:gravity="center"
+          android:text="Products Register"
+          android:textColor="@color/white"
+          android:textSize="35dp"
+          android:textStyle="bold"
+          />
+
+      <EditText
+          android:id="@+id/etProductsName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/register"
+          android:layout_margin="10dp"
+          android:background="#30ffffff"
+          android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+          android:drawablePadding="20dp"
+          android:hint="Product Name"
+          android:padding="20dp"
+          android:textColor="@color/white"
+          android:textColorHint="@color/white"
+          />
+      <EditText
+          android:id="@+id/Company"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/etUsername"
+          android:layout_margin="10dp"
+          android:background="#30ffffff"
+          android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+          android:drawablePadding="20dp"
+          android:hint="Company"
+          android:padding="20dp"
+          android:textColor="@color/white"
+          android:textColorHint="@color/white"
+          />
+
+      <EditText
+          android:id="@+id/etSeller"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/etPassword"
+          android:layout_margin="10dp"
+          android:background="#30ffffff"
+          android:drawableLeft="@drawable/ic_baseline_info_24"
+          android:drawablePadding="20dp"
+          android:hint="Seller ID"
+          android:inputType="textPassword"
+          android:padding="20dp"
+          android:textColor="@color/white"
+          android:textColorHint="@color/white" />
+
+      <RadioGroup
+          android:id="@+id/rdEpilogi"
+          android:layout_width="404dp"
+          android:layout_height="wrap_content"
+          android:background="#30ffffff"
+          android:drawableLeft="@drawable/ic_baseline_info_24"
+          android:drawablePadding="20dp"
+          android:orientation="horizontal"
+          android:padding="20dp"
+          android:textColor="@color/white"
+          android:textColorHint="@color/white"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="1.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/etCity"
+          app:layout_constraintVertical_bias="0.108">
+
+        <RadioButton
+            android:id="@+id/rbFarmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#30ffffff"
+            android:text="Farmer "
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:onClick="onRadioButtonClicked"/>
+
+
+        <RadioButton
+            android:id="@+id/rbArgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#30ffffff"
+            android:text="Argonomist"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:onClick="onRadioButtonClicked"/>
+
+
+        <RadioButton
+            android:id="@+id/rbSeller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#30ffffff"
+            android:text="Seller"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:onClick="onRadioButtonClicked"/>
+
+      </RadioGroup>
+
+      <Button
+          android:id="@+id/btnProductsRegister"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="saveProduct"
+          android:text="Register"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/rdEpilogi" />
+
+
+    </LinearLayout>
+  </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
