@@ -11,20 +11,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.text.BreakIterator;
+
 public class ListViewAdapter extends ArrayAdapter<String> {
 
-    private Activity context;
+    private final Activity context;
 
-    private String[] customer;
-    private String[] name;
-    private String[] surname;
-    private String[] email;
-    private String[] address;
-    private String[] city;
-    private String[] country;
-    private String[] postalcode;
-    private String[] phone;
-    private String[] type;
+    private final String[] customer;
+    private final String[] name;
+    private final String[] surname;
+    private final String[] email;
+    private final String[] address;
+    private final String[] city;
+    private final String[] country;
+    private final String[] postalcode;
+    private final String[] phone;
+    private final String[] type;
 
     Bitmap bitmap;
     public ListViewAdapter(Activity context, String[] customer, String[] name,String[]surname, String[]email, String[]address, String[]city, String[]country, String[]postalcode, String[]phone, String[]type)
@@ -83,7 +85,7 @@ public class ListViewAdapter extends ArrayAdapter<String> {
         else if(type[position].equals("2"))
         {
             viewHolder.tvType.setText("Geoponos");
-        }else if(type[position].equals("0"))
+        }else if(type[position].equals("3"))
         {
             viewHolder.tvType.setText("Promitheftis");
         }
@@ -105,6 +107,7 @@ public class ListViewAdapter extends ArrayAdapter<String> {
 
     class  ViewHolder
     {
+        public BreakIterator tvPrice;
         TextView tvIDD, tvName, tvSurname, tvEmail, tvAddress, tvCity, tvCountry, tvPostalcode, tvPhone, tvType;
 
 
@@ -112,16 +115,16 @@ public class ListViewAdapter extends ArrayAdapter<String> {
 
         ViewHolder(View v)
         {
-            tvIDD=(TextView)v.findViewById(R.id.tvIDD);
-            tvName=(TextView)v.findViewById(R.id.tvName);
-            tvSurname=(TextView)v.findViewById(R.id.tvSurname);
-            tvEmail=(TextView)v.findViewById(R.id.tvEmail);
-            tvAddress=(TextView)v.findViewById(R.id.tvAddress);
-            tvCity=(TextView)v.findViewById(R.id.tvCity);
-            tvCountry=(TextView)v.findViewById(R.id.tvCountry);
-            tvPostalcode=(TextView)v.findViewById(R.id.tvPostalcode);
-            tvPhone=(TextView)v.findViewById(R.id.tvPhone);
-            tvType=(TextView)v.findViewById(R.id.tvType);
+            tvIDD= v.findViewById(R.id.tvPID);
+            tvName= v.findViewById(R.id.tvPName);
+            tvSurname= v.findViewById(R.id.tvPrice);
+            tvEmail= v.findViewById(R.id.tvSeller);
+            tvAddress= v.findViewById(R.id.tvDescription);
+            tvCity= v.findViewById(R.id.tvCity);
+            tvCountry= v.findViewById(R.id.tvCountry);
+            tvPostalcode= v.findViewById(R.id.tvPostalcode);
+            tvPhone= v.findViewById(R.id.tvPhone);
+            tvType= v.findViewById(R.id.tvType);
 
             // ivw=(ImageView)v.findViewById(R.id.iv);
         }

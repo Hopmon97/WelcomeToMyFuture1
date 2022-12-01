@@ -4,7 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.renderscript.ScriptGroup;
+
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -33,41 +34,136 @@ public class background extends AsyncTask<String,Void,String> {
     protected void onPreExecute() {
         dialog = new AlertDialog.Builder(context).create();
         dialog.setTitle("Login Status");
-
     }
 
     @Override
-    protected void onPostExecute(String s) {
-        dialog.setMessage(s);
-        dialog.show();
-        Intent intent = new Intent(context, ListActivity.class);
-        context.startActivity(intent);
+    protected void onPostExecute(String result) {
 
-    //sinexizeis to :P endxrw ta asdasd sou
-        /*
-        encryption:
-        apla px anti $password
-        enna valeis md5($password)
-        je eshis encrypted password.
-        de
-        to idio prama ena kameis stin php,
-        otan kamnei register enna kataxwris encrypted to password,
-        otan kamnei login enna xanakamneis encrypt me md5,
-        je na sigkrineis me jino tis vasis noice
-        en ekatalava pws enna t kamw alla pistefkw enan t evrw
-        en eukolo
-        enna t evries
-        an den t evreis laleis m
-        . btw gchia to
-        btw gia to forgot password enna theleis na stelneis email
-        theleis phpmailer, enna s to dixw p na ertei i wra
-        kalos kalos
-        kt teleuteo
-        pe m oti en eshis pieromes mesa, exw paraggelies, pieromes en kserw akoma
-        ok, an tha valeis exw sou etoimo kodika tis paypal enna valw XD
-        ahahahhaah kaula
-        ate efiaaa mlm fb
-         */
+System.out.println(result);
+
+        if(result.equals("loginfailed"))
+        {
+            dialog.setMessage(result);
+            dialog.show();
+        }
+        else
+        {
+            try{
+                JSONObject jo = new JSONObject(result);
+                String type=jo.getString("type");
+
+               if (type.equals("0"))
+                {
+
+                    Intent intent = new Intent(context, ListActivity.class);
+                    context.startActivity(intent);
+
+                }
+                else if (type.equals("1"))
+                {
+
+                    Intent intent = new Intent(context, Geoponos.class);
+                    context.startActivity(intent);
+
+                }
+                else if (type.equals("2"))
+                {
+
+                    Intent intent = new Intent(context, Product.class);
+                    context.startActivity(intent);
+
+                }
+                else if (type.equals("3"))
+                {
+
+                    Intent intent = new Intent(context,SellerActivity.class);
+                    context.startActivity(intent);
+
+                }
+
+
+            }catch (Exception ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+
+        /*String gettype ="http://"+MainActivity.ip+"/Android/get_type.php";
+        String[] type;
+
+
+
+        BufferedInputStream is=null;
+        String line= null;
+        String result = null;
+
+        try
+        {
+            URL url = new URL(gettype);
+            HttpURLConnection con=(HttpURLConnection)url.openConnection();
+            con.setRequestMethod("GET");
+            is=new BufferedInputStream(con.getInputStream());
+
+
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        // content
+        try
+        {
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            StringBuilder sb = new StringBuilder();
+            while ((line=br.readLine())!=null)
+            {
+                sb.append(line+"\n");
+            }
+            is.close();
+            result = sb.toString();
+
+        }
+
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        //JSON
+        try
+        {
+            JSONArray ja = new JSONArray(result);
+            JSONObject jo=null;
+
+            System.out.println(ja);
+
+            type = new String[ja.length()];
+
+            // imagepath = new String[ja.length()];
+
+            for(int i=0;i<=ja.length();i++)
+            {
+                jo=ja.getJSONObject(i);
+
+                type[i]=jo.getString("type");
+
+
+                //imagepath[i]=jo.getString("photo");
+
+
+
+                //Intent intent = new Intent(context, ListActivity.class);
+
+
+            }
+
+
+
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }*/
+
     }
 
     @Override
@@ -75,6 +171,7 @@ public class background extends AsyncTask<String,Void,String> {
         String result = "";
         String user = voids[0];
         String pass = voids[1];
+
 
         String connstr ="http://"+MainActivity.ip+"/Android/login.php";
 
@@ -86,7 +183,7 @@ public class background extends AsyncTask<String,Void,String> {
             http.setDoOutput(true);
 
             OutputStream ops = http.getOutputStream();
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(ops,"Utf-8"));
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(ops, StandardCharsets.UTF_8));
             String data = URLEncoder.encode("user","UTF-8")+"="+URLEncoder.encode(user,"UTF-8")+"&&" +
                     URLEncoder.encode("pass","UTF-8")+"="+URLEncoder.encode(pass,"UTF-8");
             writer.write(data);
@@ -95,7 +192,7 @@ public class background extends AsyncTask<String,Void,String> {
             ops.close();
 
             InputStream ips = http.getInputStream();
-            BufferedReader reader= new BufferedReader(new InputStreamReader(ips,"ISO-8859-1"));
+            BufferedReader reader= new BufferedReader(new InputStreamReader(ips, StandardCharsets.ISO_8859_1));
             String line= "";
             while((line=reader.readLine())!=null)
             {
@@ -117,3 +214,5 @@ public class background extends AsyncTask<String,Void,String> {
         return result;
     }
 }
+
+

@@ -27,6 +27,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class Register extends AppCompatActivity {
     private EditText etUsername,etSurname,etPassword,etRepeatPassword,etEmailAddress,etAddress,etCity,etCountry,etPostalCode,etPhone;
@@ -86,7 +87,6 @@ public class Register extends AppCompatActivity {
         country=etCountry.getText().toString().trim();
         postal=etPostalCode.getText().toString().trim();
         phone=etPhone.getText().toString().trim();
-        type = type.getText().toString().trim();
 
 
         if(!password.equals(repeatPassword))
@@ -101,7 +101,7 @@ public class Register extends AppCompatActivity {
         else
         {
             RegisterUser registerUser = new RegisterUser(this);
-            //registerUser.execute(name,password, ....);
+            registerUser.execute(name,surname,password,email,address,city,country,postal,phone,type);
 
         }
 
@@ -141,7 +141,7 @@ public class Register extends AppCompatActivity {
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
 
                 String post_data = URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"
 
@@ -175,7 +175,7 @@ public class Register extends AppCompatActivity {
                 bufferedWriter.close();
                 outputStream.close();
                 InputStream inputStream = httpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.ISO_8859_1));
                 String result="" ;
                 String line="";
                 while((line = bufferedReader.readLine())!=null )
@@ -218,15 +218,15 @@ public class Register extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.rbArgo:
                 if (checked)
-                    type=1;
+                    type="1";
 
             case R.id.rbFarmer:
                 if (checked)
-                   type=2;
+                   type="2";
 
             case R.id.rbSeller:
                 if (checked)
-                    type=3;
+                    type="3";
 
         }
     }

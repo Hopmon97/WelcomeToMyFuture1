@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class ListActivity extends AppCompatActivity {
 
-    String urladdress="http://"+MainActivity.ip +"/Android/get_products.php";//rwta stelioooo
+    String urladdress="http://"+MainActivity.ip +"/Android/customer.php";//rwta stelioooo
     String[] customer;
     String[] name;
     String[] surname;
@@ -44,7 +44,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        listView=(ListView)findViewById(R.id.lview);
+        listView= findViewById(R.id.lview);
 
         StrictMode.setThreadPolicy((new StrictMode.ThreadPolicy.Builder().permitNetwork().build()));
         collectData();
@@ -105,7 +105,7 @@ public class ListActivity extends AppCompatActivity {
 
            // imagepath = new String[ja.length()];
 
-            for(int i=0;i<=ja.length();i++)
+            for(int i=0;i<ja.length();i++)
             {
                 jo=ja.getJSONObject(i);
                 customer[i]=jo.getString("customerID");

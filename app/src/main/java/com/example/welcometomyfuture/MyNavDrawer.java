@@ -13,7 +13,7 @@ import android.view.View;
 
 public class MyNavDrawer extends AppCompatActivity {
     //initialize variable
-    DrawerLayout drawerLayout;;
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

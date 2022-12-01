@@ -40,20 +40,6 @@
           android:textColor="@color/white"
           android:textColorHint="@color/white"
           />
-      <EditText
-          android:id="@+id/Company"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@id/etUsername"
-          android:layout_margin="10dp"
-          android:background="#30ffffff"
-          android:drawableLeft="@drawable/ic_baseline_person_outline_24"
-          android:drawablePadding="20dp"
-          android:hint="Company"
-          android:padding="20dp"
-          android:textColor="@color/white"
-          android:textColorHint="@color/white"
-          />
 
       <EditText
           android:id="@+id/etSeller"
@@ -70,60 +56,36 @@
           android:textColor="@color/white"
           android:textColorHint="@color/white" />
 
-      <RadioGroup
-          android:id="@+id/rdEpilogi"
-          android:layout_width="404dp"
+      <EditText
+          android:id="@+id/etDesc"
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_below="@id/etPrice"
+          android:layout_margin="10dp"
           android:background="#30ffffff"
           android:drawableLeft="@drawable/ic_baseline_info_24"
           android:drawablePadding="20dp"
-          android:orientation="horizontal"
+          android:hint="Description"
+          android:inputType="textPassword"
           android:padding="20dp"
           android:textColor="@color/white"
-          android:textColorHint="@color/white"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="1.0"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/etCity"
-          app:layout_constraintVertical_bias="0.108">
+          android:textColorHint="@color/white" />
 
-        <RadioButton
-            android:id="@+id/rbFarmer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="#30ffffff"
-            android:text="Farmer "
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:onClick="onRadioButtonClicked"/>
+      <EditText
+          android:id="@+id/etPrice"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/etSeller"
+          android:layout_margin="10dp"
+          android:background="#30ffffff"
+          android:drawableLeft="@drawable/ic_baseline_info_24"
+          android:drawablePadding="20dp"
+          android:hint="Price"
+          android:inputType="textPassword"
+          android:padding="20dp"
+          android:textColor="@color/white"
+          android:textColorHint="@color/white" />
 
-
-        <RadioButton
-            android:id="@+id/rbArgo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="#30ffffff"
-            android:text="Argonomist"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:onClick="onRadioButtonClicked"/>
-
-
-        <RadioButton
-            android:id="@+id/rbSeller"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="#30ffffff"
-            android:text="Seller"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:onClick="onRadioButtonClicked"/>
-
-      </RadioGroup>
 
       <Button
           android:id="@+id/btnProductsRegister"
@@ -141,4 +103,3 @@
   </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,9 @@
-/*package com.example.welcometomyfuture;
+package com.example.welcometomyfuture;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.annotation.NonNull;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -13,93 +13,90 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import java.text.BreakIterator;
 import com.example.welcometomyfuture.ListViewAdapter;
 import com.example.welcometomyfuture.R;
 import com.squareup.picasso.Picasso;
 
 public class ProductsListViewActivity extends ArrayAdapter<String> {
-    private Activity context;
 
-    Private String[]productName;
-    Private String[] productDescription;
-    Private String[] productPicture;
-    Private String[] productPrice;
-    Private String[] code;
+    private final Activity context;
+
+
+    private final String[] pID;
+    private final String[] pName;
+    private final String[] pPrice;
+    private final String[] pSeller;
+    private final String[] pDescription;
+    private final String[] image;
+
+
 
     Bitmap bitmap;
-    public ProductsListViewActivity(Activity context, String[] productName,String[]productDescription, String[]productPicture, String[]productPrice, String[]code)
-    {
-        super(context, R.layout.products_list_layout.product);
-        this.context=context;
-        this.productName=productName;
-        this.productDescription = productDescription;
-        this.productPicture=productPicture;
-        this.productPrice=productPrice;
-        this.code=code;
+
+    public ProductsListViewActivity(Activity context, String[] pID, String[] pName, String[] pPrice, String[] pSeller, String[] pDescription, String[] image) {
+        super(context, R.layout.activity_products, pID);
+        this.context = context;
+        this.pID = pID;
+        this.pName = pName;
+        this.pPrice = pPrice;
+        this.pSeller = pSeller;
+        this.pDescription = pDescription;
+        this.image = image;
 
     }
+
     @NonNull
     @Override
 
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
-    {
-        View r=convertView;
-        ListViewAdapter.ViewHolder viewHolder=null;
-        if(r==null) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        View r = convertView;
+        ViewHolder viewHolder = null;
+        if (r == null) {
             LayoutInflater layoutInflater = context.getLayoutInflater();
-            r = layoutInflater.inflate(R.layout.products_list_layout, null, true);
-            viewHolder = new ProductsListViewActivity().ViewHolder(r);
+            r = layoutInflater.inflate(R.layout.activity_products, null, true);
+            viewHolder = new ViewHolder(r);
             r.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) r.getTag();
         }
-        else
-        {
-            viewHolder=(ListViewAdapter.ViewHolder)r.getTag();
-        }
-        viewHolder.tvProduct.setText(productName[position]);
-        viewHolder.tvDescription.setText(productDiscription[position]);
-        viewHolder.tvPicture.setText(productPicture[position]);
-        viewHolder.tvPrice.setText(productPrice[position]);
-        viewHolder.tvCode.setText(code[position]);
+        viewHolder.tvIDD.setText(pID[position]);
+        viewHolder.tvName.setText(pName[position]);
+        viewHolder.tvPrice.setText(pPrice[position]);
+        viewHolder.tvSeller.setText(pSeller[position]);
+        viewHolder.tvpDescription.setText(pDescription[position]);
 
+        System.out.println(image[position]);
 
-
-
-        /*Picasso
+        Picasso
                 .with(context)
-                .load(productPicture[position])
+                .load(image[position])
                 .into(viewHolder.ivw);
-        */
-/*
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.welcometomyfuture.R;return r;
+        return r;
     }
-    class  ViewHolder
-    {
-        TextView tvName, tvSurname, tvEmail, tvAddress, tvCity, tvCountry, tvPostalcode, tvPhone, tvType;
+
+
+    class ViewHolder {
+        TextView tvIDD, tvName, tvPrice, tvSeller, tvpDescription;
 
          ImageView ivw;
 
-        ViewHolder(View v)
-        {
-            tvName=(TextView)v.findViewById(R.id.tvName);
-            tvSurname=(TextView)v.findViewById(R.id.tvSurname);
-            tvEmail=(TextView)v.findViewById(R.id.tvEmail);
-            tvAddress=(TextView)v.findViewById(R.id.tvAddress);
-            tvCity=(TextView)v.findViewById(R.id.tvCity);
-            tvCountry=(TextView)v.findViewById(R.id.tvCountry);
-            tvPostalcode=(TextView)v.findViewById(R.id.tvPostalcode);
-            tvPhone=(TextView)v.findViewById(R.id.tvPhone);
-            tvType=(TextView)v.findViewById(R.id.tvType);
-
-            // ivw=(ImageView)v.findViewById(R.id.iv);
+        ViewHolder(View v) {
+            tvIDD = v.findViewById(R.id.tvPID);
+            tvName = v.findViewById(R.id.tvPName);
+            tvPrice = v.findViewById(R.id.tvPrice);
+            tvSeller = v.findViewById(R.id.tvSeller);
+            tvpDescription = v.findViewById(R.id.tvDescription);
+            ivw=(ImageView)v.findViewById(R.id.ivw);
         }
     }
+    public void takeToCart(View view)
+    {
 
-
+    }
 }
 
-*/
+
+
+

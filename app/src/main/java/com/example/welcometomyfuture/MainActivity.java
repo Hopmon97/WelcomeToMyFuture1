@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
     //BottomNavigationView bottom_navigation;
 
 
-    EditText pas, usr;
+    EditText pas, usr,typ;
 
-    public static String ip="192.168.178.21";
+    public static String ip="192.168.134.134";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
-        usr = (EditText) findViewById(R.id.etUsername);
-        pas = (EditText) findViewById(R.id.etPassword);
+        usr = findViewById(R.id.etUsername);
+        pas = findViewById(R.id.etPassword);
 
         /*MaterialButton loginBtn = (MaterialButton) findViewById(R.id.loginBtn);
 */

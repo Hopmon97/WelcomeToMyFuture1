@@ -1,9 +1,10 @@
-/*package com.example.welcometomyfuture;
+package com.example.welcometomyfuture;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.welcometomyfuture.MainActivity;
@@ -20,11 +21,14 @@ import java.net.URL;
 
 public class ProductsActivity extends AppCompatActivity {
     String urladdress = "http://" + MainActivity.ip + "/Android/get_products.php";//rwta stelioooo
-    String[] productName;
-    String[] productDescription;
-    String[] productPicture;
-    String[] productPrice;
+
     String[] code;
+    String[] productName;
+    String[] productPrice;
+    String[] productSeller;
+    String[] productDescription;
+    String[] image;
+
 
     ListView listView;
     BufferedInputStream is;
@@ -34,11 +38,19 @@ public class ProductsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_products);
+        setContentView(R.layout.activity_products_list_view );
+
+        listView= findViewById(R.id.llview);
 
         StrictMode.setThreadPolicy((new StrictMode.ThreadPolicy.Builder().permitNetwork().build()));
         collectData();
-        ProductsListViewActivity customLiseView = new ProductsListViewActivity(this, productName, productDescription, productPicture, productPrice, code);
+
+        for(int i=0; i<productName.length; i++)
+        {
+            System.out.println("i+ " + i + " " + productName[i]);
+
+        }
+        ProductsListViewActivity customLiseView = new ProductsListViewActivity(this, code,productName, productPrice,productSeller,productDescription, image);
         listView.setAdapter(customLiseView);
     }
 
@@ -70,25 +82,29 @@ public class ProductsActivity extends AppCompatActivity {
         try {
             JSONArray ja = new JSONArray(result);
             JSONObject jo = null;
-            productName = new String[ja.length()];
-            productDescription = new String[ja.length()];
-            productPicture = new String[ja.length()];
-            productPrice = new String[ja.length()];
             code = new String[ja.length()];
+            productName = new String[ja.length()];
+            productPrice = new String[ja.length()];
+            productSeller = new String[ja.length()];
+            productDescription = new String[ja.length()];
+            image = new String[ja.length()];
 
 
-             productPicture = new String[ja.length()];
 
-            for (int i = 0; i <= ja.length(); i++) {
+
+
+
+            for (int i = 0; i<ja.length(); i++)
+            {
                 jo = ja.getJSONObject(i);
-                productName[i] = jo.getString("productName");
-                productDescription[i] = jo.getString("productDescription");
-                productPicture[i] = jo.getString("productPicture");
+                code[i] = jo.getString("eventID");
+                productName[i] = jo.getString("title");
                 productPrice[i] = jo.getString("productPrice");
-                code[i] = jo.getString("code");
+                productSeller[i] = jo.getString("customerID");
+                productDescription[i] = jo.getString("description");
+                image[i] = jo.getString("productPicture");
 
 
-                productPicture[i]=jo.getString("photo");
 
             }
 
@@ -98,5 +114,9 @@ public class ProductsActivity extends AppCompatActivity {
         }
 
     }
+    public void takeToCart(View view)
+    {
+
+    }
 }
- */
+
