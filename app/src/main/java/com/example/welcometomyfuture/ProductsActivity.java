@@ -2,9 +2,12 @@ package com.example.welcometomyfuture;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.welcometomyfuture.MainActivity;
@@ -28,6 +31,8 @@ public class ProductsActivity extends AppCompatActivity {
     String[] productSeller;
     String[] productDescription;
     String[] image;
+    String[] pquantity;
+    public EditText qua;
 
 
     ListView listView;
@@ -35,10 +40,14 @@ public class ProductsActivity extends AppCompatActivity {
     String line = null;
     String result = null;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products_list_view );
+
+        //re pelle en PARA POLLA ARGO
 
         listView= findViewById(R.id.llview);
 
@@ -50,11 +59,26 @@ public class ProductsActivity extends AppCompatActivity {
             System.out.println("i+ " + i + " " + productName[i]);
 
         }
-        ProductsListViewActivity customLiseView = new ProductsListViewActivity(this, code,productName, productPrice,productSeller,productDescription, image);
+        ProductsListViewActivity customLiseView = new ProductsListViewActivity(this, code,productName, productPrice,productSeller,productDescription, image,pquantity);
         listView.setAdapter(customLiseView);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Bundle data = new Bundle();
+                data.putString("ID", code[position]);
+                //enna valeis oulla ta variables dame mesa sto bundle
+
+                Intent intent = new Intent(ProductsActivity.this, productDetails.class);
+                intent.putExtras(data);
+                startActivity(intent);
+            }
+        });
     }
 
     private void collectData() {//connection
+
+
         try {
             URL url = new URL(urladdress);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -88,7 +112,7 @@ public class ProductsActivity extends AppCompatActivity {
             productSeller = new String[ja.length()];
             productDescription = new String[ja.length()];
             image = new String[ja.length()];
-
+            pquantity = new String[ja.length()];
 
 
 
@@ -103,7 +127,7 @@ public class ProductsActivity extends AppCompatActivity {
                 productSeller[i] = jo.getString("customerID");
                 productDescription[i] = jo.getString("description");
                 image[i] = jo.getString("productPicture");
-
+                pquantity[i] = jo.getString("quantity");
 
 
             }

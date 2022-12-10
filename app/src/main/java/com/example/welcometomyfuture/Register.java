@@ -130,9 +130,8 @@ public class Register extends AppCompatActivity {
                 String phone = params[8];
                 String type = params[9];
 
-              //  ...
 
-                URL url = new URL("http://"+MainActivity.ip+"/Android/register.php");
+                URL url = new URL("http://"+MainActivity.ip+"/Android/Registeration.php");
 
 
 

@@ -28,13 +28,12 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class Cart extends AppCompatActivity {
+public class OrdersActivity extends AppCompatActivity {
 
-    String urladdress="http://"+MainActivity.ip +"/Android/get_cart_for_user.php";
+    String urladdress="http://"+MainActivity.ip +"/Android/get_order_for_user.php";
     String[] pname;
     String[] price;
     String[] quantity;
-
 
 
 
@@ -49,22 +48,21 @@ public class Cart extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
-
+        setContentView(R.layout.activity_orders);
 
         listView= findViewById(R.id.recview);
 
         StrictMode.setThreadPolicy((new StrictMode.ThreadPolicy.Builder().permitNetwork().build()));
 
-        GetCart getCart = new GetCart(Cart.this);
-        getCart.execute();
+        GetOrder getOrder = new GetOrder(OrdersActivity.this);
+        getOrder.execute();
     }
 
-    public class GetCart extends AsyncTask<String,Void,String> {
+    public class GetOrder extends AsyncTask<String,Void,String> {
 
         Context context;
 
-        public GetCart(Context context) {
+        public GetOrder(Context context) {
             this.context = context;
         }
 
@@ -97,13 +95,13 @@ public class Cart extends AppCompatActivity {
                     //imagepath[i]=jo.getString("photo");
                 }
 
-                CartAdabter customLiseView=new CartAdabter(Cart.this, pname,price, quantity);
+                OrdersAdabter customLiseView=new OrdersAdabter(OrdersActivity.this, pname,price, quantity);
                 listView.setAdapter(customLiseView);
             }
             catch (Exception ex)
             {
                 ex.printStackTrace();
-                Toast.makeText(Cart.this, "No products in Cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(OrdersActivity.this, "No Orders Here", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -151,7 +149,6 @@ public class Cart extends AppCompatActivity {
             return result;
         }
     }
-    int totalSum=0;
 
     private void collectData()
     {//connection
@@ -203,10 +200,6 @@ public class Cart extends AppCompatActivity {
                 pname[i]=jo.getString("productID");
                 quantity[i]=jo.getString("quantity");
                 price[i]=jo.getString("price");
-                int numberq = Integer.parseInt(quantity[i]);
-                int numberp = Integer.parseInt(price[i]);
-
-                totalSum+=totalSum+(numberp*numberq);
 
 
                 //imagepath[i]=jo.getString("photo");
@@ -222,17 +215,5 @@ public class Cart extends AppCompatActivity {
         }
 
     }
-    public void checkOut(View view)
-    {
-        Bundle bundle = new Bundle();
-
-        bundle.putString("total", String.valueOf(totalSum));
-
-        Intent intent = new Intent(Cart.this, CheckOut.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
-        finish();
-    }
-
 
 }

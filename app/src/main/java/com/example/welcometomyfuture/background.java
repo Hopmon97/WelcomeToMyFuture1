@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 
 import org.json.JSONObject;
 
@@ -22,6 +23,20 @@ import java.nio.charset.StandardCharsets;
 
 public class background extends AsyncTask<String,Void,String> {
 
+    public static String customerID;
+    public static String type;
+    public static String customerName;
+    public static String customerSurname;
+    public static String password;
+    public static String email;
+    public static String address;
+    public static String city;
+    public static String country;
+    public static String postalcode;
+    public static String phone;
+
+    Bundle data = new Bundle();
+
     AlertDialog dialog;
     Context context;
     public background(Context context)
@@ -39,8 +54,6 @@ public class background extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
 
-System.out.println(result);
-
         if(result.equals("loginfailed"))
         {
             dialog.setMessage(result);
@@ -50,12 +63,35 @@ System.out.println(result);
         {
             try{
                 JSONObject jo = new JSONObject(result);
-                String type=jo.getString("type");
+                type=jo.getString("type");
 
-               if (type.equals("0"))
+                customerID = jo.getString("customerID");
+                customerName= jo.getString("customerName");
+                customerSurname= jo.getString("customerSurname");
+                password= jo.getString("password");
+                email= jo.getString("email");
+                address= jo.getString("address");
+                city= jo.getString("city");
+                country= jo.getString("country");
+                postalcode= jo.getString("postalcode");
+                phone= jo.getString("phone");
+
+
+               /* data.putString("customerID", customerID);
+                data.putString("customerName", customerName);
+                data.putString("customerSurname", customerSurname);
+                data.putString("password", password);
+                data.putString("email", email);
+                data.putString("address", address);
+                data.putString("city", city);
+                data.putString("postalcode", postalcode);
+                data.putString("phone", phone);
+                */
+
+                if (type.equals("0"))
                 {
 
-                    Intent intent = new Intent(context, ListActivity.class);
+                    Intent intent = new Intent(context, admin.class);
                     context.startActivity(intent);
 
                 }
@@ -69,7 +105,7 @@ System.out.println(result);
                 else if (type.equals("2"))
                 {
 
-                    Intent intent = new Intent(context, Product.class);
+                    Intent intent = new Intent(context, Georgosss.class);
                     context.startActivity(intent);
 
                 }
@@ -87,83 +123,6 @@ System.out.println(result);
                 ex.printStackTrace();
             }
         }
-
-        /*String gettype ="http://"+MainActivity.ip+"/Android/get_type.php";
-        String[] type;
-
-
-
-        BufferedInputStream is=null;
-        String line= null;
-        String result = null;
-
-        try
-        {
-            URL url = new URL(gettype);
-            HttpURLConnection con=(HttpURLConnection)url.openConnection();
-            con.setRequestMethod("GET");
-            is=new BufferedInputStream(con.getInputStream());
-
-
-        }
-        catch(Exception ex)
-        {
-            ex.printStackTrace();
-        }
-        // content
-        try
-        {
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            StringBuilder sb = new StringBuilder();
-            while ((line=br.readLine())!=null)
-            {
-                sb.append(line+"\n");
-            }
-            is.close();
-            result = sb.toString();
-
-        }
-
-        catch(Exception ex)
-        {
-            ex.printStackTrace();
-        }
-        //JSON
-        try
-        {
-            JSONArray ja = new JSONArray(result);
-            JSONObject jo=null;
-
-            System.out.println(ja);
-
-            type = new String[ja.length()];
-
-            // imagepath = new String[ja.length()];
-
-            for(int i=0;i<=ja.length();i++)
-            {
-                jo=ja.getJSONObject(i);
-
-                type[i]=jo.getString("type");
-
-
-                //imagepath[i]=jo.getString("photo");
-
-
-
-                //Intent intent = new Intent(context, ListActivity.class);
-
-
-            }
-
-
-
-        }
-        catch (Exception ex)
-        {
-            ex.printStackTrace();
-        }*/
-
     }
 
     @Override

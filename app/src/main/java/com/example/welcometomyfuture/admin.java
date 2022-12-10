@@ -38,7 +38,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.BreakIterator;
 
-public class SellerActivity extends AppCompatActivity {
+public class admin extends AppCompatActivity {
     String urladdress = "http://" + MainActivity.ip + "/Android/customer.php";//rwta stelioooo
     String id;
     String Name;
@@ -53,12 +53,12 @@ public class SellerActivity extends AppCompatActivity {
 
     EditText etID, etName, etSurname,etEmail,etAddress,etCity,etCountry,etPostalCode,etPhone; //....;
 
-    BottomNavigationView bottom_navigation;
+    BottomNavigationView bottom_navigation2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seller);
+        setContentView(R.layout.activity_admin);
 
         etID = findViewById(R.id.id);
         etName = findViewById(R.id.p_name);
@@ -83,20 +83,23 @@ public class SellerActivity extends AppCompatActivity {
         etPhone.setText(background.phone);
 
 
-        bottom_navigation = findViewById(R.id.bottom_navigation);
+        bottom_navigation2 = findViewById(R.id.bottom_navigation2);
 
-        bottom_navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottom_navigation2.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(getApplicationContext(), SellerActivity.class));
+                        startActivity(new Intent(getApplicationContext(), ListActivity.class));
                         return true;
                     case R.id.nav_products:
                         startActivity(new Intent(getApplicationContext(), ProductsActivity.class));
                         return true;
                     case R.id.nav_cart:
                         startActivity(new Intent(getApplicationContext(), Cart.class));
+                        return true;
+                    case R.id.nav_order:
+                        startActivity(new Intent(getApplicationContext(), OrdersActivity.class));
                         return true;
                 }
                 return false;
@@ -129,7 +132,7 @@ public class SellerActivity extends AppCompatActivity {
 
 
 
-        UpdateUser update = new UpdateUser(SellerActivity.this);
+        UpdateUser update = new UpdateUser(admin.this);
         update.execute();
 
     }
@@ -154,12 +157,12 @@ public class SellerActivity extends AppCompatActivity {
                 System.out.println(result);
 
                 if (result.equals("success")) {
-                    Intent intent = new Intent(SellerActivity.this, SellerActivity.class);
+                    Intent intent = new Intent(admin.this, admin.class);
                     startActivity(intent);
                     finish();
                 }
                 else{
-                    Toast.makeText(SellerActivity.this, "Failed to update data", Toast.LENGTH_LONG).show();
+                    Toast.makeText(admin.this, "Failed to update data", Toast.LENGTH_LONG).show();
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();

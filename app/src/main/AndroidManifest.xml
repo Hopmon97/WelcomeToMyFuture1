@@ -13,6 +13,15 @@
         android:theme="@style/Theme.WelcomeToMyFuture"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".productDetails"
+            android:exported="true" />
+        <activity
+            android:name=".Georgosss"
+            android:exported="true" />
+        <activity
+            android:name=".admin"
+            android:exported="true" />
+        <activity
             android:name=".SellerActivity"
             android:exported="true" />
         <activity
@@ -20,6 +29,9 @@
             android:exported="true" />
         <activity
             android:name=".Cart"
+            android:exported="true" />
+        <activity
+            android:name=".CheckOut"
             android:exported="true" />
         <activity
             android:name=".Geoponos"
@@ -33,20 +45,6 @@
         <activity
             android:name=".ListActivity"
             android:exported="true" />
-        <activity
-            android:name=".AboutUs"
-            android:exported="true" />
-        <activity
-            android:name=".Dashboard"
-            android:exported="true" />
-        <activity
-            android:name=".MyNavDrawer"
-            android:exported="true" />
-        <activity
-            android:name=".Eshop"
-            android:exported="true"
-            android:label="@string/title_activity_eshop"
-            android:theme="@style/Theme.WelcomeToMyFuture.NoActionBar" />
         <activity
             android:name=".ForgotPassword"
             android:exported="true" />

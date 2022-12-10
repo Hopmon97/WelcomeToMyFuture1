@@ -38,7 +38,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.BreakIterator;
 
-public class SellerActivity extends AppCompatActivity {
+public class Georgosss extends AppCompatActivity {
     String urladdress = "http://" + MainActivity.ip + "/Android/customer.php";//rwta stelioooo
     String id;
     String Name;
@@ -58,7 +58,7 @@ public class SellerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seller);
+        setContentView(R.layout.activity_georgosss);
 
         etID = findViewById(R.id.id);
         etName = findViewById(R.id.p_name);
@@ -90,7 +90,7 @@ public class SellerActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(getApplicationContext(), SellerActivity.class));
+                        startActivity(new Intent(getApplicationContext(),Georgosss.class));
                         return true;
                     case R.id.nav_products:
                         startActivity(new Intent(getApplicationContext(), ProductsActivity.class));
@@ -129,7 +129,7 @@ public class SellerActivity extends AppCompatActivity {
 
 
 
-        UpdateUser update = new UpdateUser(SellerActivity.this);
+        UpdateUser update = new UpdateUser(Georgosss.this);
         update.execute();
 
     }
@@ -154,12 +154,12 @@ public class SellerActivity extends AppCompatActivity {
                 System.out.println(result);
 
                 if (result.equals("success")) {
-                    Intent intent = new Intent(SellerActivity.this, SellerActivity.class);
+                    Intent intent = new Intent(Georgosss.this, Georgosss.class);
                     startActivity(intent);
                     finish();
                 }
                 else{
-                    Toast.makeText(SellerActivity.this, "Failed to update data", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Georgosss.this, "Failed to update data", Toast.LENGTH_LONG).show();
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();

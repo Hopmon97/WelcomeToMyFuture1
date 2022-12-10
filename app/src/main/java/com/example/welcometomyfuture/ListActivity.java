@@ -2,23 +2,36 @@ package com.example.welcometomyfuture;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class ListActivity extends AppCompatActivity {
 
     String urladdress="http://"+MainActivity.ip +"/Android/customer.php";//rwta stelioooo
+    String id;
     String[] customer;
     String[] name;
     String[] surname;
@@ -128,30 +141,6 @@ public class ListActivity extends AppCompatActivity {
 
         }
         catch (Exception ex)
-        {
-            ex.printStackTrace();
-        }
-
-    }
-    public void deleteCustomer(View v)
-    {
-        String urladdressdelete="http://"+MainActivity.ip +"/Android/delete_button.php";
-
-        try
-        {
-            URL url2 = new URL(urladdressdelete);
-            HttpURLConnection con=(HttpURLConnection)url2.openConnection();
-            con.setRequestMethod("GET");
-            is=new BufferedInputStream(con.getInputStream());
-
-
-
-            /*prepei na eleksoume ti einai to buffer je an xrizete dame
-                prepei na evroume tropo na vallume to id tou koumpiou customer se mia etavliti
-                prepei na evroume tropo na stiloume tin metavliti sto url gia na mporesume na diagrapsoume ou to sql
-*/
-        }
-        catch(Exception ex)
         {
             ex.printStackTrace();
         }

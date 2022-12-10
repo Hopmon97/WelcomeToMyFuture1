@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SellerActivity"
+    tools:context=".Georgosss"
     android:orientation="vertical"
     android:weightSum="2">
 
@@ -108,7 +108,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="update data"
-                    android:onClick="updateData1"/>
+                    android:onClick="updateData"/>
 
                 <Button
                     android:id="@+id/btnChangePassword"

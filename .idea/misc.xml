@@ -3,26 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/drawable/edit_text_border.xml" value="0.2703125" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/drawable/ic_home.xml" value="0.2703125" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_about_us.xml" value="0.11296296296296296" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_admin.xml" value="0.264" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_cart.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_checkout.xml" value="0.264" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_eshop.xml" value="0.22554347826086957" />
-        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_geoponos.xml" value="0.1" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_forgot_password.xml" value="0.536" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_geoponos.xml" value="0.2" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_georgosss.xml" value="0.1" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_gewrgos2.xml" value="0.1" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_insertitems.xml" value="0.21331521739130435" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_list.xml" value="0.1" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_my_nav_drawer.xml" value="0.1" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_orders.xml" value="0.4" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_product_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_products.xml" value="0.264" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_products_list_view.xml" value="0.1" />
-        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_products_register.xml" value="0.1" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_products_register.xml" value="0.2" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activity_seller.xml" value="0.1" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/activityorderlayout.xml" value="0.536" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/app_bar_eshop.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/cart_layout_list.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/cart_listv.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/cart_row.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/cartlayout.xml" value="0.20108695652173914" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/content_eshop.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/content_gewrgos.xml" value="0.152" />
@@ -31,14 +41,21 @@
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/layout.xml" value="0.4" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/listgeoponos.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/listgeorgosss.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/listseller.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/main_nav_drawer.xml" value="0.264" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/main_toolbar.xml" value="0.176" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/nav_header_eshop.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/orders_products_list.xml" value="0.2513586956521739" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/orders_row.xml" value="0.4" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/products_list_layout.xml" value="0.264" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/products_order_list.xml" value="0.2513586956521739" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/layout/singlerowdesign.xml" value="0.21331521739130435" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/menu/bottom_navigation2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/menu/eshop.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/mixal/AndroidStudioProjects/WelcomeToMyFuture/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>

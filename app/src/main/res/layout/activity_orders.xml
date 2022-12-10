@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cart">
+    tools:context=".OrdersActivity">
 
     <LinearLayout
         android:id="@+id/headerpanel"
@@ -92,9 +92,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/white"
-            android:onClick="checkOut"
+            android:onClick="Return"
             android:padding="10dp"
-            android:text="Checkout"
+            android:text="Return Home"
             android:textColor="#000" />
     </LinearLayout>
 
