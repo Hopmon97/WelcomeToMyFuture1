@@ -3,11 +3,13 @@ package com.example.welcometomyfuture;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,9 +29,14 @@ import java.nio.charset.StandardCharsets;
 public class productDetails extends AppCompatActivity {
 
     String productID;
+    String name;
     String price;
+    String discr;
+    String tquantity;
+    String image;
 
-    TextView tvID;
+    ImageView idimg;
+    TextView tvID,tvTitle,tvMoney,tvDis,tvQu;
     EditText etQuantity;
     Button btnCart;
 
@@ -39,14 +46,32 @@ public class productDetails extends AppCompatActivity {
         setContentView(R.layout.activity_product_details);
 
         tvID=findViewById(R.id.tvID);
+        tvTitle=findViewById(R.id.tvTitle);
+        tvMoney=findViewById(R.id.tvMoney);
+        tvDis=findViewById(R.id.tvDis);
+        tvQu=findViewById(R.id.tvQu);
+        idimg=findViewById(R.id.idimg);
+        etQuantity=findViewById(R.id.etQuantity);
         btnCart=findViewById(R.id.btnAddtocart);
         //men xiaseis ta findviewbyid
 
         Bundle data = getIntent().getExtras();
 
-        productID=data.getString("ID");
+        productID=data.getString("eventID");
+        name=data.getString("title");
+        price=data.getString("productPrice");
+        discr=data.getString("description");
+        tquantity=data.getString("quantity");
+        image=data.getString("productPicture");
+
 
         tvID.setText(productID);
+        tvTitle.setText(name);
+        tvMoney.setText(price);
+        tvDis.setText(discr);
+        tvQu.setText(tquantity);
+
+
 
 
 
